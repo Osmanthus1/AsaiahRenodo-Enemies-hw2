@@ -38,4 +38,14 @@ public class playercounter : MonoBehaviour
         }
         transform.position = currentPos;
     }
+    void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log(collision.gameObject.name);
+        if (collision.gameObject.name == "Enemy")
+        {
+            health--;
+            healthText.text = health.ToString();
+        }
+    }
+
 }
